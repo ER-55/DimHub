@@ -1,797 +1,220 @@
 <!DOCTYPE html>
 <html lang="az">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>DİM Hub</title>
-
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DİM Hub</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+  <header class="header">
+    <div class="header-container">
+      <button class="menu-button" id="menuButton" aria-label="Menyunu aç" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
-    <!-- ================= HEADER ================= -->
+      <button class="logo" id="logoButton" aria-label="Ana səhifəyə qayıt">
+        <span class="logo-text">DİM</span>
+        <span class="logo-squares" aria-hidden="true">
+          <i></i><i></i><i></i><i></i><i></i><i></i>
+          <i></i><i></i><i></i><i></i><i></i>
+        </span>
+      </button>
 
-    <header class="header">
+      <button class="info-button" id="infoButton" aria-label="Haqqımızda">
+        i
+      </button>
+    </div>
+  </header>
 
-        <div class="header-container">
+  <div class="menu-overlay" id="menuOverlay"></div>
 
-            <!-- SOL MENYU DÜYMƏSİ -->
-            <button
-                class="menu-button"
-                id="menuButton"
-                aria-label="Menyu"
-            >
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+  <aside class="side-menu" id="sideMenu" aria-label="Yan menyu">
+    <div class="side-menu-top">
+      <strong>DİM Hub</strong>
+      <button class="close-menu" id="closeMenu" aria-label="Menyunu bağla">×</button>
+    </div>
 
+    <nav class="side-nav">
+      <button class="nav-link active" data-page="home">Ana səhifə</button>
+      <button class="nav-link" data-page="passing-groups">Keçid balları</button>
+      <button class="nav-link" data-page="exam-groups">İmtahan sualları</button>
+      <button class="nav-link" data-page="universities">Universitetlər</button>
+      <button class="nav-link" data-page="about">Haqqımızda</button>
+    </nav>
+  </aside>
 
-            <!-- DİM LOGOSU -->
-            <div class="logo">
+  <main class="main-content">
+    <section class="page active" id="home">
+      <div class="hero">
+        <p class="eyebrow">Dövlət İmtahan Mərkəzi</p>
+        <h1>DİM Hub</h1>
+        <p>İmtahan, keçid balları və universitet məlumatları bir yerdə.</p>
+      </div>
 
-                <div class="logo-text">
-                    DİM
-                </div>
+      <section class="home-cards">
+        <button class="home-card blue-card" data-page="passing-groups">
+          <span class="card-icon">%</span>
+          <span>
+            <strong>Bütün illərin keçid balları</strong>
+            <small>Qruplar və illər üzrə keçid balları</small>
+          </span>
+          <b>→</b>
+        </button>
 
-                <div class="logo-squares">
-                    <i></i>
-                    <i></i>
-                    <i></i>
-                    <i></i>
-                    <i></i>
-                    <i></i>
-                    <i></i>
-                    <i></i>
-                    <i></i>
-                    <i></i>
-                    <i></i>
-                </div>
+        <button class="home-card purple-card" data-page="exam-groups">
+          <span class="card-icon">?</span>
+          <span>
+            <strong>Bütün illərin imtahan sualları</strong>
+            <small>Qruplar və illər üzrə suallar</small>
+          </span>
+          <b>→</b>
+        </button>
 
-            </div>
+        <button class="home-card green-card" data-page="universities">
+          <span class="card-icon">⌂</span>
+          <span>
+            <strong>Bütün universitetlər haqqında məlumat</strong>
+            <small>Universitet məlumatları üçün bölmə</small>
+          </span>
+          <b>→</b>
+        </button>
+      </section>
+    </section>
 
+    <section class="page" id="passing-groups">
+      <button class="back-button" data-page="home">← Ana səhifə</button>
+      <div class="page-heading">
+        <p class="eyebrow">Keçid balları</p>
+        <h2>İxtisas Qrupunu Seç</h2>
+        <p>Keçid ballarını görmək üçün ixtisas qrupunu seçin.</p>
+      </div>
 
-            <!-- HAQQIMIZDA DÜYMƏSİ -->
-            <button
-                class="info-button"
-                id="infoButton"
-                aria-label="Haqqımızda"
-            >
-                i
-            </button>
+      <div class="selection-grid">
+        <button class="selection-card" data-passing-group="I Qrup Rİ">I Qrup <span>Rİ</span></button>
+        <button class="selection-card" data-passing-group="I Qrup RK">I Qrup <span>RK</span></button>
+        <button class="selection-card" data-passing-group="II Qrup">II Qrup</button>
+        <button class="selection-card" data-passing-group="III Qrup TC">III Qrup <span>TC</span></button>
+        <button class="selection-card" data-passing-group="III Qrup DT">III Qrup <span>DT</span></button>
+        <button class="selection-card" data-passing-group="IV Qrup">IV Qrup</button>
+      </div>
+    </section>
 
+    <section class="page" id="passing-years">
+      <button class="back-button" data-page="passing-groups">← İxtisas qrupları</button>
+      <div class="page-heading">
+        <p class="eyebrow">Keçid balları</p>
+        <h2 id="passingGroupTitle">İxtisas qrupu</h2>
+        <p>İl seçin.</p>
+      </div>
+
+      <div class="year-grid">
+        <button class="year-card passing-year" data-year="2026">2026</button>
+        <button class="year-card passing-year" data-year="2025">2025</button>
+        <button class="year-card passing-year" data-year="2024">2024</button>
+        <button class="year-card passing-year" data-year="2023">2023</button>
+      </div>
+    </section>
+
+    <section class="page" id="exam-groups">
+      <button class="back-button" data-page="home">← Ana səhifə</button>
+      <div class="page-heading">
+        <p class="eyebrow">İmtahan sualları</p>
+        <h2>İxtisas Qrupunu Seç</h2>
+        <p>İmtahan suallarını görmək üçün qrup seçin.</p>
+      </div>
+
+      <div class="selection-grid four-columns">
+        <button class="selection-card" data-exam-group="I Qrup">I Qrup</button>
+        <button class="selection-card" data-exam-group="II Qrup">II Qrup</button>
+        <button class="selection-card" data-exam-group="III Qrup">III Qrup</button>
+        <button class="selection-card" data-exam-group="IV Qrup">IV Qrup</button>
+      </div>
+    </section>
+
+    <section class="page" id="exam-years">
+      <button class="back-button" data-page="exam-groups">← İxtisas qrupları</button>
+      <div class="page-heading">
+        <p class="eyebrow">İmtahan sualları</p>
+        <h2 id="examGroupTitle">İxtisas qrupu</h2>
+        <p>İl seçin.</p>
+      </div>
+
+      <div class="year-grid">
+        <button class="year-card exam-year" data-year="2026">2026</button>
+        <button class="year-card exam-year" data-year="2025">2025</button>
+        <button class="year-card exam-year" data-year="2024">2024</button>
+        <button class="year-card exam-year" data-year="2023">2023</button>
+      </div>
+    </section>
+
+    <section class="page" id="year-content">
+      <button class="back-button" id="yearContentBack">← Geri qayıt</button>
+      <div class="page-heading">
+        <p class="eyebrow" id="contentCategory">Məlumatlar</p>
+        <h2 id="contentTitle">İl məlumatları</h2>
+      </div>
+
+      <div class="empty-content">
+        <span>✦</span>
+        <h3>Bu bölmə hələlik boşdur</h3>
+        <p>Buraya seçilən il üçün məlumatları sonradan əlavə edə bilərsiniz.</p>
+      </div>
+    </section>
+
+    <section class="page" id="universities">
+      <button class="back-button" data-page="home">← Ana səhifə</button>
+      <div class="page-heading">
+        <p class="eyebrow">Universitetlər</p>
+        <h2>Bütün universitetlər haqqında məlumat</h2>
+        <p>Universitet məlumatları bu bölməyə əlavə olunacaq.</p>
+      </div>
+
+      <div class="empty-content">
+        <span>⌂</span>
+        <h3>Universitet məlumatları üçün hazır sahə</h3>
+        <p>Buraya universitetlər, ixtisaslar, ünvanlar və digər məlumatları yaza bilərsiniz.</p>
+      </div>
+    </section>
+
+    <section class="page" id="about">
+      <button class="back-button" data-page="home">← Ana səhifə</button>
+      <div class="page-heading">
+        <p class="eyebrow">DİM Hub</p>
+        <h2>Haqqımızda</h2>
+        <p>Bu hissəyə sayt haqqında məlumatı sonradan əlavə edə bilərsiniz.</p>
+      </div>
+
+      <div class="about-box">
+        <h3>Sosial media</h3>
+        <p>Sosial media keçidlərinizi sonradan buraya əlavə edə bilərsiniz.</p>
+        <div class="social-icons">
+          <a href="#" aria-label="Instagram">◎</a>
+          <a href="#" aria-label="TikTok">♪</a>
+          <a href="#" aria-label="YouTube">▶</a>
+          <a href="#" aria-label="Telegram">➤</a>
         </div>
-
-    </header>
-
-
-    <!-- ================= SOL MENYU ================= -->
-
-    <div
-        class="menu-overlay"
-        id="menuOverlay"
-    ></div>
-
-
-    <aside
-        class="side-menu"
-        id="sideMenu"
-    >
-
-        <div class="side-menu-header">
-
-            <div class="side-menu-logo">
-                DİM Hub
-            </div>
-
-            <button
-                class="close-menu"
-                id="closeMenu"
-                aria-label="Menyunu bağla"
-            >
-                ×
-            </button>
-
-        </div>
-
-
-        <div class="side-menu-content">
-
-            <button
-                class="menu-link"
-                data-page="home"
-            >
-                Ana səhifə
-            </button>
-
-
-            <button
-                class="menu-link"
-                data-page="scores"
-            >
-                Bütün illərin keçid balları
-            </button>
-
-
-            <button
-                class="menu-link"
-                data-page="questions"
-            >
-                Bütün illərin imtahan sualları
-            </button>
-
-
-            <button
-                class="menu-link"
-                data-page="about"
-            >
-                Haqqımızda
-            </button>
-
-        </div>
-
-    </aside>
-
-
-    <!-- ================= MAIN ================= -->
-
-    <main>
-
-
-        <!-- =================================================
-             ANA SƏHİFƏ
-        ================================================== -->
-
-        <section
-            class="page active"
-            id="home"
-        >
-
-            <div class="hub-container">
-
-
-                <!-- KEÇİD BALLARI -->
-
-                <button
-                    class="hub-card scores-card"
-                    data-page="scores"
-                >
-
-                    <div class="card-title">
-                        Bütün illərin keçid balları
-                    </div>
-
-
-                    <div class="card-icon">
-                        ★
-                    </div>
-
-
-                    <div class="card-description">
-                        Bütün ixtisaslar üzrə ötən illərin
-                        keçid balları
-                    </div>
-
-                </button>
-
-
-
-                <!-- İMTAHAN SUALLARI -->
-
-                <button
-                    class="hub-card questions-card"
-                    data-page="questions"
-                >
-
-                    <div class="card-title">
-                        Bütün illərin imtahan sualları
-                    </div>
-
-
-                    <div class="card-icon">
-                        ✎
-                    </div>
-
-
-                    <div class="card-description">
-                        Ötən illərdə keçirilmiş imtahanların
-                        sualları
-                    </div>
-
-                </button>
-
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =================================================
-             KEÇİD BALLARI - İLLƏR
-        ================================================== -->
-
-        <section
-            class="page"
-            id="scores"
-        >
-
-            <div class="inner-page">
-
-
-                <button
-                    class="home-button"
-                    data-page="home"
-                >
-                    <span class="home-arrow">←</span>
-                    <span>Ana səhifə</span>
-                </button>
-
-
-                <div class="page-label">
-                    DİM HUB
-                </div>
-
-
-                <h1>
-                    Bütün illərin keçid balları
-                </h1>
-
-
-                <p class="page-description">
-                    Keçid ballarına baxmaq üçün ili seçin.
-                </p>
-
-
-                <!-- İL QUTULARI -->
-
-                <div class="years-grid">
-
-
-                    <button
-                        class="year-card year-blue"
-                        data-page="score-2026"
-                    >
-                        2026
-                    </button>
-
-
-                    <button
-                        class="year-card year-red"
-                        data-page="score-2025"
-                    >
-                        2025
-                    </button>
-
-
-                    <button
-                        class="year-card year-green"
-                        data-page="score-2024"
-                    >
-                        2024
-                    </button>
-
-
-                    <button
-                        class="year-card year-orange"
-                        data-page="score-2023"
-                    >
-                        2023
-                    </button>
-
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =================================================
-             KEÇİD BALLARI - 2026
-        ================================================== -->
-
-        <section
-            class="page"
-            id="score-2026"
-        >
-
-            <div class="inner-page">
-
-                <button
-                    class="home-button"
-                    data-page="scores"
-                >
-                    <span class="home-arrow">←</span>
-                    <span>Keçid balları</span>
-                </button>
-
-
-                <div class="page-label">
-                    2026
-                </div>
-
-
-                <h1>
-                    2026-cı ilin keçid balları
-                </h1>
-
-
-                <div class="coming-soon">
-                    2026-cı ilin keçid balları burada yerləşdiriləcək.
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- 2025 -->
-
-        <section
-            class="page"
-            id="score-2025"
-        >
-
-            <div class="inner-page">
-
-                <button
-                    class="home-button"
-                    data-page="scores"
-                >
-                    <span class="home-arrow">←</span>
-                    <span>Keçid balları</span>
-                </button>
-
-
-                <div class="page-label">
-                    2025
-                </div>
-
-
-                <h1>
-                    2025-ci ilin keçid balları
-                </h1>
-
-
-                <div class="coming-soon">
-                    2025-ci ilin keçid balları burada yerləşdiriləcək.
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- 2024 -->
-
-        <section
-            class="page"
-            id="score-2024"
-        >
-
-            <div class="inner-page">
-
-                <button
-                    class="home-button"
-                    data-page="scores"
-                >
-                    <span class="home-arrow">←</span>
-                    <span>Keçid balları</span>
-                </button>
-
-
-                <div class="page-label">
-                    2024
-                </div>
-
-
-                <h1>
-                    2024-cü ilin keçid balları
-                </h1>
-
-
-                <div class="coming-soon">
-                    2024-cü ilin keçid balları burada yerləşdiriləcək.
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- 2023 -->
-
-        <section
-            class="page"
-            id="score-2023"
-        >
-
-            <div class="inner-page">
-
-                <button
-                    class="home-button"
-                    data-page="scores"
-                >
-                    <span class="home-arrow">←</span>
-                    <span>Keçid balları</span>
-                </button>
-
-
-                <div class="page-label">
-                    2023
-                </div>
-
-
-                <h1>
-                    2023-cü ilin keçid balları
-                </h1>
-
-
-                <div class="coming-soon">
-                    2023-cü ilin keçid balları burada yerləşdiriləcək.
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =================================================
-             İMTAHAN SUALLARI - İLLƏR
-        ================================================== -->
-
-        <section
-            class="page"
-            id="questions"
-        >
-
-            <div class="inner-page">
-
-
-                <button
-                    class="home-button"
-                    data-page="home"
-                >
-                    <span class="home-arrow">←</span>
-                    <span>Ana səhifə</span>
-                </button>
-
-
-                <div class="page-label">
-                    DİM HUB
-                </div>
-
-
-                <h1>
-                    Bütün illərin imtahan sualları
-                </h1>
-
-
-                <p class="page-description">
-                    İmtahan suallarına baxmaq üçün ili seçin.
-                </p>
-
-
-                <!-- İL QUTULARI -->
-
-                <div class="years-grid">
-
-
-                    <button
-                        class="year-card year-purple"
-                        data-page="question-2026"
-                    >
-                        2026
-                    </button>
-
-
-                    <button
-                        class="year-card year-blue"
-                        data-page="question-2025"
-                    >
-                        2025
-                    </button>
-
-
-                    <button
-                        class="year-card year-red"
-                        data-page="question-2024"
-                    >
-                        2024
-                    </button>
-
-
-                    <button
-                        class="year-card year-green"
-                        data-page="question-2023"
-                    >
-                        2023
-                    </button>
-
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =================================================
-             SUALLAR - 2026
-        ================================================== -->
-
-        <section
-            class="page"
-            id="question-2026"
-        >
-
-            <div class="inner-page">
-
-                <button
-                    class="home-button"
-                    data-page="questions"
-                >
-                    <span class="home-arrow">←</span>
-                    <span>İmtahan sualları</span>
-                </button>
-
-
-                <div class="page-label">
-                    2026
-                </div>
-
-
-                <h1>
-                    2026-cı ilin imtahan sualları
-                </h1>
-
-
-                <div class="coming-soon">
-                    2026-cı ilin imtahan sualları burada yerləşdiriləcək.
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- 2025 -->
-
-        <section
-            class="page"
-            id="question-2025"
-        >
-
-            <div class="inner-page">
-
-                <button
-                    class="home-button"
-                    data-page="questions"
-                >
-                    <span class="home-arrow">←</span>
-                    <span>İmtahan sualları</span>
-                </button>
-
-
-                <div class="page-label">
-                    2025
-                </div>
-
-
-                <h1>
-                    2025-ci ilin imtahan sualları
-                </h1>
-
-
-                <div class="coming-soon">
-                    2025-ci ilin imtahan sualları burada yerləşdiriləcək.
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- 2024 -->
-
-        <section
-            class="page"
-            id="question-2024"
-        >
-
-            <div class="inner-page">
-
-                <button
-                    class="home-button"
-                    data-page="questions"
-                >
-                    <span class="home-arrow">←</span>
-                    <span>İmtahan sualları</span>
-                </button>
-
-
-                <div class="page-label">
-                    2024
-                </div>
-
-
-                <h1>
-                    2024-cü ilin imtahan sualları
-                </h1>
-
-
-                <div class="coming-soon">
-                    2024-cü ilin imtahan sualları burada yerləşdiriləcək.
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- 2023 -->
-
-        <section
-            class="page"
-            id="question-2023"
-        >
-
-            <div class="inner-page">
-
-                <button
-                    class="home-button"
-                    data-page="questions"
-                >
-                    <span class="home-arrow">←</span>
-                    <span>İmtahan sualları</span>
-                </button>
-
-
-                <div class="page-label">
-                    2023
-                </div>
-
-
-                <h1>
-                    2023-cü ilin imtahan sualları
-                </h1>
-
-
-                <div class="coming-soon">
-                    2023-cü ilin imtahan sualları burada yerləşdiriləcək.
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =================================================
-             HAQQIMIZDA
-        ================================================== -->
-
-        <section
-            class="page"
-            id="about"
-        >
-
-            <div class="inner-page">
-
-
-                <button
-                    class="home-button"
-                    data-page="home"
-                >
-                    <span class="home-arrow">←</span>
-                    <span>Ana səhifə</span>
-                </button>
-
-
-                <div class="page-label">
-                    DİM HUB
-                </div>
-
-
-                <h1>
-                    Haqqımızda
-                </h1>
-
-
-                <div class="about-box">
-
-                    <h2>
-                        DİM Hub haqqında
-                    </h2>
-
-                    <p>
-                        Bu hissə daha sonra DİM Hub haqqında
-                        məlumatlarla doldurulacaq.
-                    </p>
-
-                </div>
-
-
-                <div class="social-box">
-
-                    <h2>
-                        Sosial media
-                    </h2>
-
-                    <p>
-                        Sosial media hesabları daha sonra
-                        burada əlavə olunacaq.
-                    </p>
-
-
-                    <div class="social-links">
-
-                        <a href="#" class="social-link">
-                            Instagram
-                        </a>
-
-                        <a href="#" class="social-link">
-                            YouTube
-                        </a>
-
-                        <a href="#" class="social-link">
-                            Telegram
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-
-    <!-- ================= FOOTER ================= -->
-
-    <footer class="footer">
-
-        <div class="footer-container">
-
-            <div class="footer-title">
-                DİM Hub
-            </div>
-
-
-            <div class="footer-description">
-                DİM ilə bağlı məlumatların vahid platforması
-            </div>
-
-
-            <div class="footer-line"></div>
-
-
-            <div class="footer-copy">
-                © 2026 DİM Hub
-            </div>
-
-        </div>
-
-    </footer>
-
-
-
-    <script src="script.js"></script>
-
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div>
+      <strong>DİM Hub</strong>
+      <p>İmtahan məlumatlarına asan çıxış.</p>
+    </div>
+
+    <div class="footer-socials" aria-label="Sosial media keçidləri">
+      <a href="#" aria-label="Instagram">◎</a>
+      <a href="#" aria-label="TikTok">♪</a>
+      <a href="#" aria-label="YouTube">▶</a>
+      <a href="#" aria-label="Telegram">➤</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
