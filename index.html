@@ -1,220 +1,961 @@
 <!DOCTYPE html>
 <html lang="az">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DİM Hub</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DİM Hub</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <header class="header">
-    <div class="header-container">
-      <button class="menu-button" id="menuButton" aria-label="Menyunu aç" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
 
-      <button class="logo" id="logoButton" aria-label="Ana səhifəyə qayıt">
-        <span class="logo-text">DİM</span>
-        <span class="logo-squares" aria-hidden="true">
-          <i></i><i></i><i></i><i></i><i></i><i></i>
-          <i></i><i></i><i></i><i></i><i></i>
-        </span>
-      </button>
+    <header class="header">
+        <div class="header-container">
 
-      <button class="info-button" id="infoButton" aria-label="Haqqımızda">
-        i
-      </button>
-    </div>
-  </header>
+            <button class="menu-button" id="menuButton" aria-label="Menyu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
 
-  <div class="menu-overlay" id="menuOverlay"></div>
+            <button class="logo" data-page="home" aria-label="Ana səhifə">
+                <strong>DİM</strong>
 
-  <aside class="side-menu" id="sideMenu" aria-label="Yan menyu">
-    <div class="side-menu-top">
-      <strong>DİM Hub</strong>
-      <button class="close-menu" id="closeMenu" aria-label="Menyunu bağla">×</button>
-    </div>
+                <span class="logo-squares">
+                    <i></i><i></i><i></i>
+                    <i></i><i></i><i></i>
+                    <i></i><i></i><i></i>
+                </span>
+            </button>
 
-    <nav class="side-nav">
-      <button class="nav-link active" data-page="home">Ana səhifə</button>
-      <button class="nav-link" data-page="passing-groups">Keçid balları</button>
-      <button class="nav-link" data-page="exam-groups">İmtahan sualları</button>
-      <button class="nav-link" data-page="universities">Universitetlər</button>
-      <button class="nav-link" data-page="about">Haqqımızda</button>
-    </nav>
-  </aside>
+            <button class="info-button" id="infoButton">i</button>
 
-  <main class="main-content">
-    <section class="page active" id="home">
-      <div class="hero">
-        <p class="eyebrow">Dövlət İmtahan Mərkəzi</p>
-        <h1>DİM Hub</h1>
-        <p>İmtahan, keçid balları və universitet məlumatları bir yerdə.</p>
-      </div>
-
-      <section class="home-cards">
-        <button class="home-card blue-card" data-page="passing-groups">
-          <span class="card-icon">%</span>
-          <span>
-            <strong>Bütün illərin keçid balları</strong>
-            <small>Qruplar və illər üzrə keçid balları</small>
-          </span>
-          <b>→</b>
-        </button>
-
-        <button class="home-card purple-card" data-page="exam-groups">
-          <span class="card-icon">?</span>
-          <span>
-            <strong>Bütün illərin imtahan sualları</strong>
-            <small>Qruplar və illər üzrə suallar</small>
-          </span>
-          <b>→</b>
-        </button>
-
-        <button class="home-card green-card" data-page="universities">
-          <span class="card-icon">⌂</span>
-          <span>
-            <strong>Bütün universitetlər haqqında məlumat</strong>
-            <small>Universitet məlumatları üçün bölmə</small>
-          </span>
-          <b>→</b>
-        </button>
-      </section>
-    </section>
-
-    <section class="page" id="passing-groups">
-      <button class="back-button" data-page="home">← Ana səhifə</button>
-      <div class="page-heading">
-        <p class="eyebrow">Keçid balları</p>
-        <h2>İxtisas Qrupunu Seç</h2>
-        <p>Keçid ballarını görmək üçün ixtisas qrupunu seçin.</p>
-      </div>
-
-      <div class="selection-grid">
-        <button class="selection-card" data-passing-group="I Qrup Rİ">I Qrup <span>Rİ</span></button>
-        <button class="selection-card" data-passing-group="I Qrup RK">I Qrup <span>RK</span></button>
-        <button class="selection-card" data-passing-group="II Qrup">II Qrup</button>
-        <button class="selection-card" data-passing-group="III Qrup TC">III Qrup <span>TC</span></button>
-        <button class="selection-card" data-passing-group="III Qrup DT">III Qrup <span>DT</span></button>
-        <button class="selection-card" data-passing-group="IV Qrup">IV Qrup</button>
-      </div>
-    </section>
-
-    <section class="page" id="passing-years">
-      <button class="back-button" data-page="passing-groups">← İxtisas qrupları</button>
-      <div class="page-heading">
-        <p class="eyebrow">Keçid balları</p>
-        <h2 id="passingGroupTitle">İxtisas qrupu</h2>
-        <p>İl seçin.</p>
-      </div>
-
-      <div class="year-grid">
-        <button class="year-card passing-year" data-year="2026">2026</button>
-        <button class="year-card passing-year" data-year="2025">2025</button>
-        <button class="year-card passing-year" data-year="2024">2024</button>
-        <button class="year-card passing-year" data-year="2023">2023</button>
-      </div>
-    </section>
-
-    <section class="page" id="exam-groups">
-      <button class="back-button" data-page="home">← Ana səhifə</button>
-      <div class="page-heading">
-        <p class="eyebrow">İmtahan sualları</p>
-        <h2>İxtisas Qrupunu Seç</h2>
-        <p>İmtahan suallarını görmək üçün qrup seçin.</p>
-      </div>
-
-      <div class="selection-grid four-columns">
-        <button class="selection-card" data-exam-group="I Qrup">I Qrup</button>
-        <button class="selection-card" data-exam-group="II Qrup">II Qrup</button>
-        <button class="selection-card" data-exam-group="III Qrup">III Qrup</button>
-        <button class="selection-card" data-exam-group="IV Qrup">IV Qrup</button>
-      </div>
-    </section>
-
-    <section class="page" id="exam-years">
-      <button class="back-button" data-page="exam-groups">← İxtisas qrupları</button>
-      <div class="page-heading">
-        <p class="eyebrow">İmtahan sualları</p>
-        <h2 id="examGroupTitle">İxtisas qrupu</h2>
-        <p>İl seçin.</p>
-      </div>
-
-      <div class="year-grid">
-        <button class="year-card exam-year" data-year="2026">2026</button>
-        <button class="year-card exam-year" data-year="2025">2025</button>
-        <button class="year-card exam-year" data-year="2024">2024</button>
-        <button class="year-card exam-year" data-year="2023">2023</button>
-      </div>
-    </section>
-
-    <section class="page" id="year-content">
-      <button class="back-button" id="yearContentBack">← Geri qayıt</button>
-      <div class="page-heading">
-        <p class="eyebrow" id="contentCategory">Məlumatlar</p>
-        <h2 id="contentTitle">İl məlumatları</h2>
-      </div>
-
-      <div class="empty-content">
-        <span>✦</span>
-        <h3>Bu bölmə hələlik boşdur</h3>
-        <p>Buraya seçilən il üçün məlumatları sonradan əlavə edə bilərsiniz.</p>
-      </div>
-    </section>
-
-    <section class="page" id="universities">
-      <button class="back-button" data-page="home">← Ana səhifə</button>
-      <div class="page-heading">
-        <p class="eyebrow">Universitetlər</p>
-        <h2>Bütün universitetlər haqqında məlumat</h2>
-        <p>Universitet məlumatları bu bölməyə əlavə olunacaq.</p>
-      </div>
-
-      <div class="empty-content">
-        <span>⌂</span>
-        <h3>Universitet məlumatları üçün hazır sahə</h3>
-        <p>Buraya universitetlər, ixtisaslar, ünvanlar və digər məlumatları yaza bilərsiniz.</p>
-      </div>
-    </section>
-
-    <section class="page" id="about">
-      <button class="back-button" data-page="home">← Ana səhifə</button>
-      <div class="page-heading">
-        <p class="eyebrow">DİM Hub</p>
-        <h2>Haqqımızda</h2>
-        <p>Bu hissəyə sayt haqqında məlumatı sonradan əlavə edə bilərsiniz.</p>
-      </div>
-
-      <div class="about-box">
-        <h3>Sosial media</h3>
-        <p>Sosial media keçidlərinizi sonradan buraya əlavə edə bilərsiniz.</p>
-        <div class="social-icons">
-          <a href="#" aria-label="Instagram">◎</a>
-          <a href="#" aria-label="TikTok">♪</a>
-          <a href="#" aria-label="YouTube">▶</a>
-          <a href="#" aria-label="Telegram">➤</a>
         </div>
-      </div>
-    </section>
-  </main>
+    </header>
 
-  <footer class="footer">
-    <div>
-      <strong>DİM Hub</strong>
-      <p>İmtahan məlumatlarına asan çıxış.</p>
-    </div>
+    <div class="menu-overlay" id="menuOverlay"></div>
 
-    <div class="footer-socials" aria-label="Sosial media keçidləri">
-      <a href="#" aria-label="Instagram">◎</a>
-      <a href="#" aria-label="TikTok">♪</a>
-      <a href="#" aria-label="YouTube">▶</a>
-      <a href="#" aria-label="Telegram">➤</a>
-    </div>
-  </footer>
+    <aside class="side-menu" id="sideMenu">
 
-  <script src="script.js"></script>
+        <div class="side-menu-header">
+            <strong>DİM Hub</strong>
+            <button class="close-menu" id="closeMenu">×</button>
+        </div>
+
+        <nav class="side-menu-content">
+            <button class="menu-link" data-page="home">Ana səhifə</button>
+            <button class="menu-link" data-page="scores">Bütün illərin keçid balları</button>
+            <button class="menu-link" data-page="questions">Bütün illərin imtahan sualları</button>
+            <button class="menu-link" data-page="calculator">İmtahan Balı Hesablayıcısı</button>
+            <button class="menu-link" data-page="major-selection">İxtisas seçimi</button>
+            <button class="menu-link" data-page="universities">Universitetlər haqqında məlumat</button>
+            <button class="menu-link" data-page="about">Haqqımızda</button>
+        </nav>
+
+    </aside>
+
+    <main>
+
+        <!-- ANA SƏHİFƏ -->
+
+        <section class="page active" id="home">
+
+            <div class="hub-container">
+
+                <button class="hub-card scores-card" data-page="scores">
+                    <span class="card-icon">★</span>
+
+                    <span class="card-title">
+                        Bütün illərin keçid balları
+                    </span>
+
+                    <span class="card-description">
+                        Bütün ixtisaslar üzrə ötən illərin keçid balları
+                    </span>
+                </button>
+
+                <button class="hub-card questions-card" data-page="questions">
+                    <span class="card-icon">✎</span>
+
+                    <span class="card-title">
+                        Bütün illərin imtahan sualları
+                    </span>
+
+                    <span class="card-description">
+                        Ötən illərdə keçirilmiş imtahanların sualları
+                    </span>
+                </button>
+
+                <button class="hub-card calculator-card" data-page="calculator">
+                    <span class="card-icon">∑</span>
+
+                    <span class="card-title">
+                        İmtahan Balı Hesablayıcısı
+                    </span>
+
+                    <span class="card-description">
+                        Buraxılış və blok imtahanı üzrə təxmini balınızı hesablayın
+                    </span>
+                </button>
+
+                <button class="hub-card major-selection-card" data-page="major-selection">
+                    <span class="card-icon">✓</span>
+
+                    <span class="card-title">
+                        İxtisas seçimi
+                    </span>
+
+                    <span class="card-description">
+                        Balınıza uyğun ixtisasları və ötən illərin keçid ballarını araşdırın
+                    </span>
+                </button>
+
+                <button class="hub-card universities-card" data-page="universities">
+                    <span class="card-icon">⌂</span>
+
+                    <span class="card-title">
+                        Bütün universitetlər haqqında məlumat
+                    </span>
+
+                    <span class="card-description">
+                        Universitetlər barədə məlumatlar
+                    </span>
+                </button>
+
+            </div>
+
+            <!-- YENİLİKLƏR VƏ XƏBƏRLƏR -->
+
+            <section class="news-section">
+
+                <div class="news-heading">
+                    <span></span>
+                    <h2>Yeniliklər və Xəbərlər</h2>
+                </div>
+
+                <div class="news-grid">
+
+                    <button
+                        class="news-card"
+                        data-page="news-example"
+                        aria-label="Nümunə xəbər"
+                    >
+                        <img
+                            src="./images/news-example-cover.jpg"
+                            alt="Nümunə xəbər şəkli"
+                        >
+                    </button>
+
+                </div>
+
+            </section>
+
+        </section>
+
+        <!-- NÜMUNƏ XƏBƏR -->
+
+        <section class="page" id="news-example">
+            <div class="inner-page">
+
+                <button class="back-button" data-page="home">
+                    ← Ana səhifə
+                </button>
+
+                <p class="page-label">YENİLİKLƏR VƏ XƏBƏRLƏR</p>
+
+                <h1>Xəbərin başlığını buraya yazın</h1>
+
+                <div class="news-detail">
+
+                    <img
+                        src="./images/news-example-cover.jpg"
+                        alt="Xəbərin əsas şəkli"
+                    >
+
+                    <div class="news-text">
+                        <p>
+                            Xəbərin əsas mətnini buraya yazın.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- KEÇİD BALLARI -->
+
+        <section class="page" id="scores">
+            <div class="inner-page">
+
+                <button class="back-button" data-page="home">
+                    ← Ana səhifə
+                </button>
+
+                <p class="page-label">DİM HUB</p>
+
+                <h1>Bütün illərin keçid balları</h1>
+
+                <p class="page-description">
+                    Davam etmək üçün ixtisas qrupunu seçin.
+                </p>
+
+                <h2 class="selection-title">İxtisas Qrupunu Seç</h2>
+
+                <div class="selection-grid">
+                    <button class="group-card" data-group="ri"><span>I Qrup</span><b>Rİ</b></button>
+                    <button class="group-card" data-group="rk"><span>I Qrup</span><b>RK</b></button>
+                    <button class="group-card" data-group="ii"><span>II Qrup</span></button>
+                    <button class="group-card" data-group="tc"><span>III Qrup</span><b>TC</b></button>
+                    <button class="group-card" data-group="dt"><span>III Qrup</span><b>DT</b></button>
+                    <button class="group-card" data-group="iv"><span>IV Qrup</span></button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- KEÇİD BALLARI İLLƏR -->
+
+        <section class="page" id="score-years">
+            <div class="inner-page">
+
+                <button class="back-button" data-page="scores">
+                    ← İxtisas qrupları
+                </button>
+
+                <p class="page-label" id="scoreGroupLabel"></p>
+                <h1 id="scoreYearsTitle"></h1>
+
+                <p class="page-description">
+                    Keçid ballarına baxmaq üçün ili seçin.
+                </p>
+
+                <div class="years-grid">
+                    <button class="year-card year-blue" data-score-year="2026">2026</button>
+                    <button class="year-card year-red" data-score-year="2025">2025</button>
+                    <button class="year-card year-green" data-score-year="2024">2024</button>
+                    <button class="year-card year-orange" data-score-year="2023">2023</button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- KEÇİD BALLARI CƏDVƏLİ -->
+
+        <section class="page" id="score-table-page">
+            <div class="inner-page">
+
+                <button class="back-button" data-page="score-years">
+                    ← İllər
+                </button>
+
+                <p class="page-label" id="tableLabel"></p>
+                <h1 id="tableTitle"></h1>
+
+                <p class="table-help">
+                        Əgər hər hansı <b>Dövlət Sifarişli</b> və ya <b>Ödənişli</b> yerin qarşısında <i>"-"</i> işarəsi qoyulubsa, deməli həmin hissə üzrə keçid balı ya yoxdur, ya da müəyyən olunmamışdır.
+
+                <div id="scoreContent"></div>
+
+            </div>
+        </section>
+
+        <!-- İMTAHAN SUALLARI -->
+
+        <section class="page" id="questions">
+            <div class="inner-page">
+
+                <button class="back-button" data-page="home">
+                    ← Ana səhifə
+                </button>
+
+                <p class="page-label">DİM HUB</p>
+
+                <h1>Bütün illərin imtahan sualları</h1>
+
+                <p class="page-description">
+                    Davam etmək üçün imtahan qrupunu seçin.
+                </p>
+
+                <h2 class="selection-title">İmtahan Qrupunu Seç</h2>
+
+                <div class="exam-group-grid">
+                    <button data-question-group="I Qrup">I Qrup</button>
+                    <button data-question-group="II Qrup">II Qrup</button>
+                    <button data-question-group="III Qrup">III Qrup</button>
+                    <button data-question-group="IV Qrup">IV Qrup</button>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="page" id="question-years">
+            <div class="inner-page">
+
+                <button class="back-button" data-page="questions">
+                    ← Qruplar
+                </button>
+
+                <p class="page-label" id="questionGroupLabel"></p>
+                <h1 id="questionYearsTitle"></h1>
+
+                <div class="years-grid">
+                    <button class="year-card year-purple" data-question-year="2026">2026</button>
+                    <button class="year-card year-blue" data-question-year="2025">2025</button>
+                    <button class="year-card year-red" data-question-year="2024">2024</button>
+                    <button class="year-card year-green" data-question-year="2023">2023</button>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="page" id="question-page">
+            <div class="inner-page">
+
+                <button class="back-button" data-page="question-years">
+                    ← İllər
+                </button>
+
+                <p class="page-label" id="questionLabel"></p>
+                <h1 id="questionTitle"></h1>
+
+                <div class="placeholder-box">
+                    <span>✎</span>
+                    <h2>İmtahan materialları</h2>
+                    <p>Bu hissəyə sonradan PDF və ya sual keçidlərini əlavə edə bilərsiniz.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- =====================================================
+             İMTAHAN BALI HESABLAYICISI
+             ===================================================== -->
+
+        <section class="page" id="calculator">
+            <div class="inner-page">
+
+                <button class="back-button" data-page="home">
+                    ← Ana səhifə
+                </button>
+
+                <p class="page-label">DİM HUB</p>
+
+                <h1>İmtahan Balı Hesablayıcısı</h1>
+
+                <p class="page-description">
+                    İmtahan növünü seçin və düzgün cavablarınızı daxil edərək
+                    təxmini balınızı hesablayın.
+                </p>
+
+                <div class="calculator-choice-grid">
+
+                    <button class="calculator-choice" data-calculator="grade9">
+                        <span>9</span>
+                        <strong>Buraxılış — 9-cu sinif</strong>
+                        <small>Buraxılış imtahanı</small>
+                    </button>
+
+                    <button class="calculator-choice" data-calculator="grade11">
+                        <span>11</span>
+                        <strong>Buraxılış — 11-ci sinif</strong>
+                        <small>Buraxılış imtahanı</small>
+                    </button>
+
+                    <button class="calculator-choice" data-calculator="block">
+                        <span>150</span>
+                        <strong>Blok</strong>
+                        <small>Qəbul imtahanı</small>
+                    </button>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 9-CU SİNİF HESABLAYICI -->
+
+        <section class="page" id="calculator-grade9">
+            <div class="inner-page">
+
+                <button class="back-button" data-page="calculator">
+                    ← Hesablayıcılar
+                </button>
+
+                <p class="page-label">BURAXILIŞ — 9-CU SİNİF</p>
+
+                <h1>9-cu sinif buraxılış balı</h1>
+
+                <p class="page-description">
+                    Hər fənn üzrə düzgün cavablarınızı daxil edin.
+                </p>
+
+                <div class="calculator-subjects">
+
+                    <div class="subject-calculator">
+                        <h2>Riyaziyyat</h2>
+
+                        <label>
+                            Qapalı/açıq düzgün cavab sayı
+                            <div class="stepper">
+                                <button type="button" data-stepper="minus">−</button>
+                                <input id="g9-math-correct" type="number" min="0" step="0.5" value="0">
+                                <button type="button" data-stepper="plus">+</button>
+                            </div>
+                        </label>
+
+                        <label>
+                            Ətraflı suallarda doğru cavab sayı
+                            <input id="g9-math-detailed" type="number" min="0" step="0.01" value="0">
+                        </label>
+
+                        <div class="estimated-score">
+                            Təxmini balın:
+                            <strong id="g9-math-result">0.00</strong> bal
+                        </div>
+                    </div>
+
+                    <div class="subject-calculator">
+                        <h2>Tədris dili</h2>
+
+                        <label>
+                            Qapalı/açıq düzgün cavab sayı
+                            <div class="stepper">
+                                <button type="button" data-stepper="minus">−</button>
+                                <input id="g9-language-correct" type="number" min="0" step="0.5" value="0">
+                                <button type="button" data-stepper="plus">+</button>
+                            </div>
+                        </label>
+
+                        <label>
+                            Ətraflı suallarda doğru cavab sayı
+                            <input id="g9-language-detailed" type="number" min="0" step="0.01" value="0">
+                        </label>
+
+                        <div class="estimated-score">
+                            Təxmini balın:
+                            <strong id="g9-language-result">0.00</strong> bal
+                        </div>
+                    </div>
+
+                    <div class="subject-calculator">
+                        <h2>Xarici dil</h2>
+
+                        <label>
+                            Qapalı/açıq düzgün cavab sayı
+                            <div class="stepper">
+                                <button type="button" data-stepper="minus">−</button>
+                                <input id="g9-foreign-correct" type="number" min="0" step="0.5" value="0">
+                                <button type="button" data-stepper="plus">+</button>
+                            </div>
+                        </label>
+
+                        <label>
+                            Ətraflı suallarda doğru cavab sayı
+                            <input id="g9-foreign-detailed" type="number" min="0" step="0.01" value="0">
+                        </label>
+
+                        <label>
+                            Yazı işi balı
+                            <input id="g9-foreign-writing" type="number" min="0" step="0.01" value="0">
+                        </label>
+
+                        <div class="estimated-score">
+                            Təxmini balın:
+                            <strong id="g9-foreign-result">0.00</strong> bal
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="calculator-total">
+                    Ümumi təxmini balın:
+                    <strong id="g9-total-result">0.00</strong> bal
+                </div>
+
+                <div class="calculator-note">
+                    <strong>Qeyd:</strong>
+                    Bu hesablayıcı 100% dəqiq balınızı müəyyən etmir.
+                    Ətraflı sualların və yazı işlərinin balları DİM tərəfindən
+                    faktiki qiymətləndirmədə fərqli hesablana bilər.
+                    Göstərilən nəticə yalnız təxmini baldır.
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 11-Cİ SİNİF HESABLAYICI -->
+
+        <section class="page" id="calculator-grade11">
+            <div class="inner-page">
+
+                <button class="back-button" data-page="calculator">
+                    ← Hesablayıcılar
+                </button>
+
+                <p class="page-label">BURAXILIŞ — 11-Cİ SİNİF</p>
+
+                <h1>11-ci sinif buraxılış balı</h1>
+
+                <p class="page-description">
+                    Hər fənn üzrə düzgün cavablarınızı daxil edin.
+                </p>
+
+                <div class="calculator-subjects">
+
+                    <div class="subject-calculator">
+                        <h2>Riyaziyyat</h2>
+
+                        <label>
+                            Qapalı/açıq düzgün cavab sayı
+                            <div class="stepper">
+                                <button type="button" data-stepper="minus">−</button>
+                                <input id="g11-math-correct" type="number" min="0" step="0.5" value="0">
+                                <button type="button" data-stepper="plus">+</button>
+                            </div>
+                        </label>
+
+                        <label>
+                            Ətraflı suallarda doğru cavab sayı
+                            <input id="g11-math-detailed" type="number" min="0" step="0.01" value="0">
+                        </label>
+
+                        <div class="estimated-score">
+                            Təxmini balın:
+                            <strong id="g11-math-result">0.00</strong> bal
+                        </div>
+                    </div>
+
+                    <div class="subject-calculator">
+                        <h2>Tədris dili</h2>
+
+                        <label>
+                            Qapalı/açıq düzgün cavab sayı
+                            <div class="stepper">
+                                <button type="button" data-stepper="minus">−</button>
+                                <input id="g11-language-correct" type="number" min="0" step="0.5" value="0">
+                                <button type="button" data-stepper="plus">+</button>
+                            </div>
+                        </label>
+
+                        <label>
+                            Ətraflı suallarda doğru cavab sayı
+                            <input id="g11-language-detailed" type="number" min="0" step="0.01" value="0">
+                        </label>
+
+                        <div class="estimated-score">
+                            Təxmini balın:
+                            <strong id="g11-language-result">0.00</strong> bal
+                        </div>
+                    </div>
+
+                    <div class="subject-calculator">
+                        <h2>Xarici dil</h2>
+
+                        <label>
+                            Qapalı/açıq düzgün cavab sayı
+                            <div class="stepper">
+                                <button type="button" data-stepper="minus">−</button>
+                                <input id="g11-foreign-correct" type="number" min="0" step="0.5" value="0">
+                                <button type="button" data-stepper="plus">+</button>
+                            </div>
+                        </label>
+
+                        <label>
+                            Ətraflı suallarda doğru cavab sayı
+                            <input id="g11-foreign-detailed" type="number" min="0" step="0.01" value="0">
+                        </label>
+
+                        <label>
+                            Yazı işi balı
+                            <input id="g11-foreign-writing" type="number" min="0" step="0.01" value="0">
+                        </label>
+
+                        <div class="estimated-score">
+                            Təxmini balın:
+                            <strong id="g11-foreign-result">0.00</strong> bal
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="calculator-total">
+                    Ümumi təxmini balın:
+                    <strong id="g11-total-result">0.00</strong> bal
+                </div>
+
+                <div class="calculator-note">
+                    <strong>Qeyd:</strong>
+                    Bu hesablayıcı 100% dəqiq balınızı müəyyən etmir.
+                    Ətraflı sualların və yazı işlərinin balları DİM tərəfindən
+                    faktiki qiymətləndirmədə fərqli hesablana bilər.
+                    Göstərilən nəticə yalnız təxmini baldır.
+                </div>
+
+            </div>
+        </section>
+
+        <!-- BLOK HESABLAYICI -->
+
+        <section class="page" id="calculator-block">
+            <div class="inner-page">
+
+                <button class="back-button" data-page="calculator">
+                    ← Hesablayıcılar
+                </button>
+
+                <p class="page-label">BLOK İMTAHANI</p>
+
+                <h1>Blok imtahanı balı</h1>
+
+                <p class="page-description">
+                    Hər fənn üçün düzgün cavablarınızı və səhv qapalı cavablarınızı daxil edin.
+                </p>
+
+                <div class="calculator-subjects">
+
+                    <div class="subject-calculator">
+                        <h2>Əsas fənn 1</h2>
+
+                        <label>
+                            Açıq/qapalı düzgün cavab sayı
+                            <div class="stepper">
+                                <button type="button" data-stepper="minus">−</button>
+                                <input id="block-subject1-correct" type="number" min="0" step="0.5" value="0">
+                                <button type="button" data-stepper="plus">+</button>
+                            </div>
+                        </label>
+
+                        <label>
+                            Ətraflı suallarda doğru cavab sayı
+                            <input id="block-subject1-detailed" type="number" min="0" step="0.01" value="0">
+                        </label>
+
+                        <label>
+                            Səhv qapalı cavab sayı
+                            <div class="stepper">
+                                <button type="button" data-stepper="minus">−</button>
+                                <input id="block-subject1-wrong" type="number" min="0" step="0.5" value="0">
+                                <button type="button" data-stepper="plus">+</button>
+                            </div>
+                        </label>
+
+                        <div class="estimated-score">
+                            Təxmini balın:
+                            <strong id="block-subject1-result">0.00</strong> bal
+                        </div>
+                    </div>
+
+                    <div class="subject-calculator">
+                        <h2>Əsas fənn 2</h2>
+
+                        <label>
+                            Açıq/qapalı düzgün cavab sayı
+                            <div class="stepper">
+                                <button type="button" data-stepper="minus">−</button>
+                                <input id="block-subject2-correct" type="number" min="0" step="0.5" value="0">
+                                <button type="button" data-stepper="plus">+</button>
+                            </div>
+                        </label>
+
+                        <label>
+                            Ətraflı suallarda doğru cavab sayı
+                            <input id="block-subject2-detailed" type="number" min="0" step="0.01" value="0">
+                        </label>
+
+                        <label>
+                            Səhv qapalı cavab sayı
+                            <div class="stepper">
+                                <button type="button" data-stepper="minus">−</button>
+                                <input id="block-subject2-wrong" type="number" min="0" step="0.5" value="0">
+                                <button type="button" data-stepper="plus">+</button>
+                            </div>
+                        </label>
+
+                        <div class="estimated-score">
+                            Təxmini balın:
+                            <strong id="block-subject2-result">0.00</strong> bal
+                        </div>
+                    </div>
+
+                    <div class="subject-calculator">
+                        <h2>Fənn 3</h2>
+
+                        <label>
+                            Açıq/qapalı düzgün cavab sayı
+                            <div class="stepper">
+                                <button type="button" data-stepper="minus">−</button>
+                                <input id="block-subject3-correct" type="number" min="0" step="0.5" value="0">
+                                <button type="button" data-stepper="plus">+</button>
+                            </div>
+                        </label>
+
+                        <label>
+                            Ətraflı suallarda doğru cavab sayı
+                            <input id="block-subject3-detailed" type="number" min="0" step="0.01" value="0">
+                        </label>
+
+                        <label>
+                            Səhv qapalı cavab sayı
+                            <div class="stepper">
+                                <button type="button" data-stepper="minus">−</button>
+                                <input id="block-subject3-wrong" type="number" min="0" step="0.5" value="0">
+                                <button type="button" data-stepper="plus">+</button>
+                            </div>
+                        </label>
+
+                        <div class="estimated-score">
+                            Təxmini balın:
+                            <strong id="block-subject3-result">0.00</strong> bal
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="calculator-total">
+                    Ümumi təxmini blok balın:
+                    <strong id="block-total-result">0.00</strong> bal
+                </div>
+
+                <div class="calculator-note">
+                    <strong>Qeyd 1:</strong>
+                    Blok imtahanında hər səhv qapalı cavab üçün həmin fənnin
+                    düzgün qapalı/açıq cavab balının 25%-i qədər bal çıxılır.
+                    Bu çıxılma yalnız qapalı sual səhvlərinə tətbiq olunur.
+
+                    <br><br>
+
+                    <strong>Qeyd 2:</strong>
+                    Əsas fənn 1 və Əsas fənn 2 hissəsinə qrupunuza uyğun
+                    imtahanınızda 150 bal verən fənlərin, Fənn 3 hissəsinə isə
+                    100 bal verən fənnin nəticəsini daxil edin.
+
+                    <br><br>
+
+                    <strong>Ümumi qeyd:</strong>
+                    Bu hesablayıcı 100% dəqiq balınızı müəyyən etmir.
+                    Ətraflı sualların və digər qiymətləndirmə hissələrinin balları
+                    DİM tərəfindən faktiki qiymətləndirmədə fərqli hesablana bilər.
+                    Göstərilən nəticə yalnız təxmini baldır.
+                </div>
+
+            </div>
+        </section>
+
+        <!-- =====================================================
+             İXTİSAS SEÇİMİ
+             ===================================================== -->
+
+        <section class="page" id="major-selection">
+            <div class="inner-page">
+
+                <button class="back-button" data-page="home">
+                    ← Ana səhifə
+                </button>
+
+                <p class="page-label">DİM HUB</p>
+
+                <h1>İxtisas seçimi</h1>
+
+                <p class="page-description">
+                    İxtisas qrupunuzu və topladığınız balı daxil edin.
+                    Sistem əvvəlki illərin keçid balları əsasında balınıza
+                    uyğun ixtisasları göstərəcək.
+                </p>
+
+                <div class="major-selection-form">
+
+                    <label>
+                        İxtisas qrupunu seçin
+
+                        <select id="major-selection-group">
+                            <option value="">Qrup seçin</option>
+                            <option value="ri">I Qrup Rİ</option>
+                            <option value="rk">I Qrup RK</option>
+                            <option value="ii">II Qrup</option>
+                            <option value="tc">III Qrup TC</option>
+                            <option value="dt">III Qrup DT</option>
+                            <option value="iv">IV Qrup</option>
+                        </select>
+                    </label>
+
+                    <label>
+                        Topladığınız bal
+
+                        <input
+                            id="major-selection-score"
+                            type="number"
+                            min="0"
+                            step="0.01"
+                            placeholder="Məsələn: 512.40"
+                        >
+                    </label>
+
+                    <button
+                        type="button"
+                        class="major-selection-button"
+                        id="major-selection-button"
+                    >
+                        İxtisasları göstər
+                    </button>
+
+                </div>
+
+                <div id="major-selection-results"></div>
+
+                <div class="major-selection-note">
+                    <strong>Qeyd:</strong>
+                    Nəticələr əvvəlki illərin keçid balları əsasında göstərilir.
+                    Keçid balları hər il dəyişə bildiyi üçün bu nəticələr qəbul
+                    olunacağınıza zəmanət vermir və yalnız seçim zamanı
+                    istiqamətləndirici məlumat kimi istifadə edilməlidir.
+                </div>
+
+            </div>
+        </section>
+
+        <!-- UNİVERSİTETLƏR -->
+
+        <section class="page" id="universities">
+            <div class="inner-page">
+
+                <button class="back-button" data-page="home">
+                    ← Ana səhifə
+                </button>
+
+                <p class="page-label">DİM HUB</p>
+
+                <h1>Bütün universitetlər haqqında məlumat</h1>
+
+                <p class="page-description">
+                    Universitetlər, ixtisaslar və digər faydalı məlumatlar.
+                </p>
+
+                <div class="universities-list">
+
+                    <article class="university-info-card">
+
+                        <h2>Bakı Ali Neft Məktəbi</h2>
+
+                        <div class="university-images">
+
+                            <img
+                                src="./images/banm.jpg"
+                                alt="Bakı Ali Neft Məktəbinin binası"
+                            >
+
+                        </div>
+
+                        <div class="university-text">
+
+                            <p>
+                                Bakı Ali Neft Məktəbi haqqında məlumatı buraya yazın.
+                            </p>
+
+                            <p>
+                                Bu hissəyə ixtisaslar, ünvan, əlaqə vasitələri,
+                                rəsmi sayt və digər məlumatları əlavə edə bilərsiniz.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- HAQQIMIZDA -->
+
+        <section class="page" id="about">
+            <div class="inner-page">
+
+                <button class="back-button" data-page="home">
+                    ← Ana səhifə
+                </button>
+
+                <p class="page-label">DİM HUB</p>
+
+                <h1>Haqqımızda</h1>
+
+                <div class="placeholder-box">
+                    <h2>Haqqımızda məlumat</h2>
+
+                    <p>
+                        Bu hissəni öz məlumatlarınızla doldura bilərsiniz.
+                    </p>
+
+                    <div class="about-socials">
+                        <span>Instagram</span>
+                        <span>TikTok</span>
+                        <span>YouTube</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+
+            <div>
+                <strong>DİM Hub</strong>
+                <p>İmtahan və qəbul məlumatları.</p>
+            </div>
+
+            <div class="footer-socials">
+                <a href="#">◎</a>
+                <a href="#">♪</a>
+                <a href="#">▶</a>
+            </div>
+
+            <p>© 2026 DİM Hub</p>
+
+        </div>
+    </footer>
+
+
+    <!-- =========================================================
+         KEÇİD BALLARI MƏLUMAT BAZASI
+         ========================================================= -->
+
+    <script id="score-data" type="text/plain">
+
+[ri|2026]
+
+@Bakı Ali Neft Məktəbi
+Kompüter mühəndisliyi | 468 | 658.7
+Data analitikası | 400 | 652.1
+
+@Azərbaycan Texniki Universiteti
+Kompüter mühəndisliyi | 412 | 487
+İnformasiya texnologiyaları | 405 | 475
+Elektrik mühəndisliyi | 390 | 450
+
+[ri|2025]
+Bakı Ali Neft Məktəbi | İnformasiya texnologiyaları | 445 | 515
+Azərbaycan Texniki Universiteti | Kompüter mühəndisliyi | 410 | 480
+
+[rk|2026]
+Universitet adı | İxtisas adı | 400 | 450
+
+[ii|2026]
+Universitet adı | İxtisas adı | 350 | 420
+
+[tc|2026]
+Universitet adı | İxtisas adı | 380 | 430
+
+[dt|2026]
+Universitet adı | İxtisas adı | 390 | 440
+
+[iv|2026]
+Universitet adı | İxtisas adı | 400 | 460
+
+    </script>
+
+    <script src="script.js"></script>
 </body>
 </html>
