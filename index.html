@@ -253,7 +253,84 @@
                 <h1 id="tableTitle"></h1>
 
                 <p class="table-help">
-                        Əgər hər hansı <b>Dövlət Sifarişli</b> və ya <b>Ödənişli</b> yerin qarşısında <i>"-"</i> işarəsi qoyulubsa, deməli həmin hissə üzrə keçid balı ya yoxdur, ya da müəyyən olunmamışdır.
+                    Əgər hər hansı <b>Dövlət Sifarişli</b> və ya <b>Ödənişli</b> yerin qarşısında <i>"-"</i> işarəsi qoyulubsa, deməli həmin hissə üzrə keçid balı ya yoxdur, ya da müəyyən olunmamışdır.
+                </p>
+
+                <!-- FİLTRLƏR -->
+
+                <div class="score-filter">
+
+                    <button
+                        type="button"
+                        class="score-filter-toggle"
+                        id="scoreFilterToggle"
+                    >
+                        ⚙️ Filtrlər
+                    </button>
+
+                    <div class="score-filter-panel" id="scoreFilterPanel">
+
+                        <div class="score-filter-section">
+
+                            <h3>İxtisaslar</h3>
+
+                            <label class="score-filter-all">
+                                <input
+                                    type="checkbox"
+                                    id="scoreAllSpecialties"
+                                >
+                                <span>Bütün ixtisaslar</span>
+                            </label>
+
+                            <div
+                                class="score-filter-list"
+                                id="scoreSpecialtyList"
+                            ></div>
+
+                        </div>
+
+                        <div class="score-filter-section">
+
+                            <h3>Universitetlər</h3>
+
+                            <label class="score-filter-all">
+                                <input
+                                    type="checkbox"
+                                    id="scoreAllUniversities"
+                                >
+                                <span>Bütün universitetlər</span>
+                            </label>
+
+                            <div
+                                class="score-filter-list"
+                                id="scoreUniversityList"
+                            ></div>
+
+                        </div>
+
+                        <div class="score-filter-actions">
+
+                            <button
+                                type="button"
+                                class="score-filter-apply"
+                                id="scoreFilterApply"
+                            >
+                                Tətbiq et
+                            </button>
+
+                            <button
+                                type="button"
+                                class="score-filter-clear"
+                                id="scoreFilterClear"
+                            >
+                                Təmizlə
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
 
                 <div id="scoreContent"></div>
 
@@ -328,9 +405,7 @@
             </div>
         </section>
 
-        <!-- =====================================================
-             İMTAHAN BALI HESABLAYICISI
-             ===================================================== -->
+        <!-- İMTAHAN BALI HESABLAYICISI -->
 
         <section class="page" id="calculator">
             <div class="inner-page">
@@ -393,10 +468,12 @@
                 <div class="calculator-subjects">
 
                     <div class="subject-calculator">
+
                         <h2>Riyaziyyat</h2>
 
                         <label>
                             Qapalı/açıq düzgün cavab sayı
+
                             <div class="stepper">
                                 <button type="button" data-stepper="minus">−</button>
                                 <input id="g9-math-correct" type="number" min="0" step="0.5" value="0">
@@ -413,13 +490,16 @@
                             Təxmini balın:
                             <strong id="g9-math-result">0.00</strong> bal
                         </div>
+
                     </div>
 
                     <div class="subject-calculator">
+
                         <h2>Tədris dili</h2>
 
                         <label>
                             Qapalı/açıq düzgün cavab sayı
+
                             <div class="stepper">
                                 <button type="button" data-stepper="minus">−</button>
                                 <input id="g9-language-correct" type="number" min="0" step="0.5" value="0">
@@ -436,23 +516,21 @@
                             Təxmini balın:
                             <strong id="g9-language-result">0.00</strong> bal
                         </div>
+
                     </div>
 
                     <div class="subject-calculator">
+
                         <h2>Xarici dil</h2>
 
                         <label>
                             Qapalı/açıq düzgün cavab sayı
+
                             <div class="stepper">
                                 <button type="button" data-stepper="minus">−</button>
                                 <input id="g9-foreign-correct" type="number" min="0" step="0.5" value="0">
                                 <button type="button" data-stepper="plus">+</button>
                             </div>
-                        </label>
-
-                        <label>
-                            Ətraflı suallarda doğru cavab sayı
-                            <input id="g9-foreign-detailed" type="number" min="0" step="0.01" value="0">
                         </label>
 
                         <label>
@@ -464,6 +542,7 @@
                             Təxmini balın:
                             <strong id="g9-foreign-result">0.00</strong> bal
                         </div>
+
                     </div>
 
                 </div>
@@ -504,10 +583,12 @@
                 <div class="calculator-subjects">
 
                     <div class="subject-calculator">
+
                         <h2>Riyaziyyat</h2>
 
                         <label>
                             Qapalı/açıq düzgün cavab sayı
+
                             <div class="stepper">
                                 <button type="button" data-stepper="minus">−</button>
                                 <input id="g11-math-correct" type="number" min="0" step="0.5" value="0">
@@ -524,13 +605,16 @@
                             Təxmini balın:
                             <strong id="g11-math-result">0.00</strong> bal
                         </div>
+
                     </div>
 
                     <div class="subject-calculator">
+
                         <h2>Tədris dili</h2>
 
                         <label>
                             Qapalı/açıq düzgün cavab sayı
+
                             <div class="stepper">
                                 <button type="button" data-stepper="minus">−</button>
                                 <input id="g11-language-correct" type="number" min="0" step="0.5" value="0">
@@ -547,23 +631,21 @@
                             Təxmini balın:
                             <strong id="g11-language-result">0.00</strong> bal
                         </div>
+
                     </div>
 
                     <div class="subject-calculator">
+
                         <h2>Xarici dil</h2>
 
                         <label>
                             Qapalı/açıq düzgün cavab sayı
+
                             <div class="stepper">
                                 <button type="button" data-stepper="minus">−</button>
                                 <input id="g11-foreign-correct" type="number" min="0" step="0.5" value="0">
                                 <button type="button" data-stepper="plus">+</button>
                             </div>
-                        </label>
-
-                        <label>
-                            Ətraflı suallarda doğru cavab sayı
-                            <input id="g11-foreign-detailed" type="number" min="0" step="0.01" value="0">
                         </label>
 
                         <label>
@@ -575,6 +657,7 @@
                             Təxmini balın:
                             <strong id="g11-foreign-result">0.00</strong> bal
                         </div>
+
                     </div>
 
                 </div>
@@ -615,10 +698,12 @@
                 <div class="calculator-subjects">
 
                     <div class="subject-calculator">
+
                         <h2>Əsas fənn 1</h2>
 
                         <label>
                             Açıq/qapalı düzgün cavab sayı
+
                             <div class="stepper">
                                 <button type="button" data-stepper="minus">−</button>
                                 <input id="block-subject1-correct" type="number" min="0" step="0.5" value="0">
@@ -633,6 +718,7 @@
 
                         <label>
                             Səhv qapalı cavab sayı
+
                             <div class="stepper">
                                 <button type="button" data-stepper="minus">−</button>
                                 <input id="block-subject1-wrong" type="number" min="0" step="0.5" value="0">
@@ -644,13 +730,16 @@
                             Təxmini balın:
                             <strong id="block-subject1-result">0.00</strong> bal
                         </div>
+
                     </div>
 
                     <div class="subject-calculator">
+
                         <h2>Əsas fənn 2</h2>
 
                         <label>
                             Açıq/qapalı düzgün cavab sayı
+
                             <div class="stepper">
                                 <button type="button" data-stepper="minus">−</button>
                                 <input id="block-subject2-correct" type="number" min="0" step="0.5" value="0">
@@ -665,6 +754,7 @@
 
                         <label>
                             Səhv qapalı cavab sayı
+
                             <div class="stepper">
                                 <button type="button" data-stepper="minus">−</button>
                                 <input id="block-subject2-wrong" type="number" min="0" step="0.5" value="0">
@@ -676,13 +766,16 @@
                             Təxmini balın:
                             <strong id="block-subject2-result">0.00</strong> bal
                         </div>
+
                     </div>
 
                     <div class="subject-calculator">
+
                         <h2>Fənn 3</h2>
 
                         <label>
                             Açıq/qapalı düzgün cavab sayı
+
                             <div class="stepper">
                                 <button type="button" data-stepper="minus">−</button>
                                 <input id="block-subject3-correct" type="number" min="0" step="0.5" value="0">
@@ -697,6 +790,7 @@
 
                         <label>
                             Səhv qapalı cavab sayı
+
                             <div class="stepper">
                                 <button type="button" data-stepper="minus">−</button>
                                 <input id="block-subject3-wrong" type="number" min="0" step="0.5" value="0">
@@ -708,6 +802,7 @@
                             Təxmini balın:
                             <strong id="block-subject3-result">0.00</strong> bal
                         </div>
+
                     </div>
 
                 </div>
@@ -718,6 +813,7 @@
                 </div>
 
                 <div class="calculator-note">
+
                     <strong>Qeyd 1:</strong>
                     Blok imtahanında hər səhv qapalı cavab üçün həmin fənnin
                     düzgün qapalı/açıq cavab balının 25%-i qədər bal çıxılır.
@@ -737,14 +833,13 @@
                     Ətraflı sualların və digər qiymətləndirmə hissələrinin balları
                     DİM tərəfindən faktiki qiymətləndirmədə fərqli hesablana bilər.
                     Göstərilən nəticə yalnız təxmini baldır.
+
                 </div>
 
             </div>
         </section>
 
-        <!-- =====================================================
-             İXTİSAS SEÇİMİ
-             ===================================================== -->
+        <!-- İXTİSAS SEÇİMİ -->
 
         <section class="page" id="major-selection">
             <div class="inner-page">
@@ -777,11 +872,11 @@
                             <option value="dt">III Qrup DT</option>
                             <option value="iv">IV Qrup</option>
                         </select>
+
                     </label>
 
                     <label>
                         Topladığınız bal
-
                         <input
                             id="major-selection-score"
                             type="number"
@@ -838,12 +933,10 @@
                         <h2>Bakı Ali Neft Məktəbi</h2>
 
                         <div class="university-images">
-
                             <img
                                 src="./images/banm.jpg"
                                 alt="Bakı Ali Neft Məktəbinin binası"
                             >
-
                         </div>
 
                         <div class="university-text">
@@ -880,6 +973,7 @@
                 <h1>Haqqımızda</h1>
 
                 <div class="placeholder-box">
+
                     <h2>Haqqımızda məlumat</h2>
 
                     <p>
@@ -891,6 +985,7 @@
                         <span>TikTok</span>
                         <span>YouTube</span>
                     </div>
+
                 </div>
 
             </div>
@@ -899,6 +994,7 @@
     </main>
 
     <footer class="footer">
+
         <div class="footer-container">
 
             <div>
@@ -915,15 +1011,10 @@
             <p>© 2026 DİM Hub</p>
 
         </div>
+
     </footer>
 
-
-    <!-- =========================================================
-         KEÇİD BALLARI MƏLUMAT BAZASI
-         ========================================================= -->
-
     <script id="score-data" type="text/plain">
-
 [ri|2026]
 
 @Bakı Ali Neft Məktəbi
@@ -953,9 +1044,9 @@ Universitet adı | İxtisas adı | 390 | 440
 
 [iv|2026]
 Universitet adı | İxtisas adı | 400 | 460
-
     </script>
 
     <script src="script.js"></script>
+
 </body>
 </html>
