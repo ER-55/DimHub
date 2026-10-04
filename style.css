@@ -1278,3 +1278,155 @@ button {
         padding: 12px;
     }
 }
+
+/* =========================================================
+   KEÇİD BALLARI — FİLTRLƏR
+   ========================================================= */
+
+.score-filter {
+    margin: 22px 0 28px;
+}
+
+.score-filter-toggle {
+    width: 100%;
+    min-height: 52px;
+    padding: 0 18px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: white;
+    color: var(--navy);
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+    cursor: pointer;
+    box-shadow: 0 5px 16px rgba(35, 67, 96, 0.04);
+    transition: 0.2s;
+}
+
+.score-filter-toggle:hover {
+    border-color: #c5d9e8;
+    background: #fbfdff;
+}
+
+.score-filter-panel {
+    display: none;
+    margin-top: 12px;
+    padding: 22px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: white;
+    box-shadow: 0 8px 22px rgba(35, 67, 96, 0.06);
+}
+
+.score-filter-panel.open {
+    display: block;
+}
+
+.score-filter-section {
+    margin-top: 22px;
+}
+
+.score-filter-section:first-child {
+    margin-top: 0;
+}
+
+.score-filter-section h3 {
+    margin-bottom: 12px;
+    color: var(--navy);
+    font-size: 18px;
+}
+
+.score-filter-all,
+.score-filter-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 42px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    color: var(--text);
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.score-filter-all {
+    margin-bottom: 7px;
+    background: #f1f7fc;
+    font-weight: bold;
+}
+
+.score-filter-option:hover {
+    background: #f7fafc;
+}
+
+.score-filter-all input,
+.score-filter-option input {
+    width: 17px;
+    height: 17px;
+    margin: 0;
+    accent-color: var(--blue);
+    cursor: pointer;
+}
+
+.score-filter-list {
+    max-height: 240px;
+    overflow-y: auto;
+    padding: 3px;
+    border: 1px solid #edf1f4;
+    border-radius: 9px;
+    background: #fbfdff;
+}
+
+.score-filter-actions {
+    margin-top: 22px;
+    display: flex;
+    gap: 10px;
+}
+
+.score-filter-apply,
+.score-filter-clear {
+    min-height: 46px;
+    padding: 0 20px;
+    border: 0;
+    border-radius: 9px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.score-filter-apply {
+    flex: 1;
+    background: var(--blue);
+    color: white;
+}
+
+.score-filter-apply:hover {
+    background: var(--dark-blue);
+}
+
+.score-filter-clear {
+    background: #edf1f4;
+    color: var(--text);
+}
+
+.score-filter-clear:hover {
+    background: #e2e8ed;
+}
+
+@media (max-width: 780px) {
+
+    .score-filter-panel {
+        padding: 18px;
+    }
+
+    .score-filter-actions {
+        flex-direction: column;
+    }
+
+    .score-filter-apply,
+    .score-filter-clear {
+        width: 100%;
+    }
+
+}
