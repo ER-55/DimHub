@@ -697,16 +697,21 @@ function showScoreTable(resetFilters = false) {
 
     if (!yearData || yearData.length === 0) {
 
-        scoreContent.innerHTML = `
-            <p class="empty-score-message">
-                ${selectedYear}-ci il üçün bu qrup üzrə
-                keçid balı məlumatı əlavə edilməyib.
-            </p>
-        `;
+    // Əvvəlki qrup/ilin filtr məlumatlarını tam təmizlə
+    selectedSpecialties = [];
+    selectedUniversities = [];
 
-        return;
-    }
+    createScoreFilterLists([]);
 
+    scoreContent.innerHTML = `
+        <p class="empty-score-message">
+            ${selectedYear}-ci il üçün bu qrup üzrə
+            keçid balı məlumatı əlavə edilməyib.
+        </p>
+    `;
+
+    return;
+}
 
     /*
      * Yalnız yeni qrup + il açıldıqda
